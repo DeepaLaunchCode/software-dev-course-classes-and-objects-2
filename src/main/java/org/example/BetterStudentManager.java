@@ -12,9 +12,10 @@ public class BetterStudentManager {
 
     public void addStudent(String name, double grade) {
         // This method should add a new student to the list of students
-        Student newStudent = new Student(name, grade);
-        students.add(newStudent);
-
+        if (name != null && !name.trim().isEmpty()) {
+            Student newStudent = new Student(name, grade);
+            students.add(newStudent);
+        }
     }
 
     public void removeStudent(String name) {

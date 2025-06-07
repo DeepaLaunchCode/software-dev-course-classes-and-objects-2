@@ -22,8 +22,8 @@ public class BetterStudentManagerTests {
         manager.addStudent("Jane", 88.3);
         manager.removeStudent("John");
         assert manager.students.size() == 1;
-        assert manager.students.getFirst().name.equals("Jane");
-        assert manager.students.getFirst().grade == 88.3;
+        assert manager.students.get(0).name.equals("Jane");
+        assert manager.students.get(0).grade == 88.3;
     }
 
     @Test
@@ -31,6 +31,6 @@ public class BetterStudentManagerTests {
         BetterStudentManager  manager = new BetterStudentManager();
         manager.addStudent("John", 90.9);
         manager.addStudent("Jane", 88.3);
-        assert manager.getStudentList().equals("John 90.9\nJane 88.3\n");
+        assert manager.getStudentList().equals("Name  Grade \nJohn 90.9\nJane 88.3\n");
     }
 }
